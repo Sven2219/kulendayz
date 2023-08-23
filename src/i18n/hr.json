@@ -1,0 +1,11 @@
+{
+  "login": {
+    "title": "Login zaslon"
+  },
+  "register": {
+    "title": "Register zaslon"
+  },
+  "portal": {
+    "title": "Portal zaslon"
+  }
+}

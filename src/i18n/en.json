@@ -1,0 +1,11 @@
+{
+  "login": {
+    "title": "Login screen"
+  },
+  "register": {
+    "title": "Register screen"
+  },
+  "portal": {
+    "title": "Portal screen"
+  }
+}
