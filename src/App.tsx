@@ -1,11 +1,16 @@
 import { BrowserRouter } from 'react-router-dom'
+
 import Router from './router'
+import ErrorBoundary from './wrapper/ErrorBoundary'
+import ErrorScreen from './modules/error'
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Router />
-    </BrowserRouter>
+    <ErrorBoundary fallback={<ErrorScreen />}>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+    </ErrorBoundary>
   )
 }
 
