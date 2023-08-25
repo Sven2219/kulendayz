@@ -1,6 +1,10 @@
 {
   "login": {
-    "title": "Login screen"
+    "title": "Log In",
+    "emailPlaceholder": "Enter your email",
+    "passwordPlaceholder": "Enter your password",
+    "emailLabel": "Email",
+    "passwordLabel": "Password"
   },
   "register": {
     "title": "Register screen"

@@ -1,7 +1,9 @@
+import errorImage from '/error.png'
+
 const ErrorScreen = () => {
   return (
-    <div>
-      <h1>Error</h1>
+    <div className="error-screen">
+      <img src={errorImage} />
     </div>
   )
 }

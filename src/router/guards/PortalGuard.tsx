@@ -1,5 +1,5 @@
 import { Navigate, Outlet } from 'react-router-dom'
-import { RoutesNames } from '../routes'
+import { RoutesNames } from '../const/routes'
 
 const PortalGuard = () => {
   const isLoggedIn = false

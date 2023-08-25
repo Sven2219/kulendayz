@@ -2,11 +2,10 @@ import { BrowserRouter } from 'react-router-dom'
 
 import Router from './router'
 import ErrorBoundary from './wrapper/ErrorBoundary'
-import ErrorScreen from './modules/error'
 
 const App = () => {
   return (
-    <ErrorBoundary fallback={<ErrorScreen />}>
+    <ErrorBoundary>
       <BrowserRouter>
         <Router />
       </BrowserRouter>

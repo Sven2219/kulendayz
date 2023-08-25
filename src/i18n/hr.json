@@ -1,6 +1,10 @@
 {
   "login": {
-    "title": "Login zaslon"
+    "title": "Login zaslon",
+    "emailPlaceholder": "Unesite email",
+    "passwordPlaceholder": "Unesite lozinku",
+    "emailLabel": "Email",
+    "passwordLabel": "Lozinka"
   },
   "register": {
     "title": "Register zaslon"

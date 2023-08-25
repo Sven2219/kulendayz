@@ -1,12 +1,12 @@
 import React from 'react'
 import { Route, Routes, Navigate } from 'react-router-dom'
 
-import { RoutesNames } from './routes'
+import { RoutesNames } from './const/routes'
 import PortalGuard from './guards/PortalGuard'
 import AuthGuard from './guards/AuthGuard'
-import Register from 'src/modules/auth/register'
 import Portal from 'src/modules/portal'
-import Login from 'src/modules/auth/login'
+import Login from 'src/modules/login'
+import Register from 'src/modules/register'
 
 const Router = () => {
   return (

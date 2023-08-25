@@ -1,7 +1,7 @@
 import React from 'react'
+import ErrorScreen from 'src/modules/error'
 
 interface ErrorBoundaryProps {
-  fallback: JSX.Element
   children: JSX.Element
 }
 
@@ -24,7 +24,7 @@ class ErrorBoundary extends React.Component<
 
   render() {
     if (this.state.hasError) {
-      return this.props.fallback
+      return <ErrorScreen />
     }
 
     return this.props.children
