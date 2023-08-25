@@ -7,7 +7,9 @@
     "passwordLabel": "Lozinka",
     "submitButton": "Potvrdi",
     "notRegisteredMessage": "Niste član? ",
-    "registerNow": "Registriraj se odmah!"
+    "registerNow": "Registriraj se odmah!",
+    "emailError": "Email format nije validan",
+    "passwordError": "Lozinka je preslaba"
   },
   "register": {
     "title": "Register zaslon"

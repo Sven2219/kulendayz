@@ -7,6 +7,9 @@
     width: 100%;
     height: 40px;
   }
+  .invalid {
+    border-color: $fire-brick;
+  }
 
   .label {
     padding-bottom: 8px;
@@ -14,6 +17,6 @@
   }
 
   .error {
-    color: $fireBrick;
+    color: $fire-brick;
   }
 }

@@ -10,6 +10,7 @@
 
 .button:disabled {
   background-color: rgba($light-gray, 0.2);
+  cursor: default;
 }
 
 .button-primary {

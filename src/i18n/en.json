@@ -7,7 +7,9 @@
     "passwordLabel": "Password",
     "submitButton": "Submit",
     "notRegisteredMessage": "Not a member?",
-    "registerNow": "Register now!"
+    "registerNow": "Register now!",
+    "emailError": "Email format is not valid",
+    "passwordError": "Password is to weak"
   },
   "register": {
     "title": "Register screen"
