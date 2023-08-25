@@ -17,7 +17,7 @@
 
   .right-side {
     @extend .side;
-
+    background-color: $white;
     .form {
       border-radius: 16px;
       box-shadow: 0 0 20px $light-gray;
@@ -25,8 +25,17 @@
       width: 100%;
       max-width: 500px;
 
-      .input-wrapper {
-        margin-top: 48px;
+      .input-form {
+        margin-block: 32px;
+      }
+      .linkable-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 12px;
+        .registration-label {
+          margin-right: 4px;
+        }
       }
     }
   }

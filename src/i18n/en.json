@@ -4,7 +4,10 @@
     "emailPlaceholder": "Enter your email",
     "passwordPlaceholder": "Enter your password",
     "emailLabel": "Email",
-    "passwordLabel": "Password"
+    "passwordLabel": "Password",
+    "submitButton": "Submit",
+    "notRegisteredMessage": "Not a member?",
+    "registerNow": "Register now!"
   },
   "register": {
     "title": "Register screen"

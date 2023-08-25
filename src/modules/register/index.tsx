@@ -1,10 +1,14 @@
 import { useTranslation } from 'react-i18next'
 
+import Text from 'src/components/text'
+
 const Register = () => {
   const { t } = useTranslation()
   return (
     <div>
-      <h1 className="title-text">{t('register.title')}</h1>
+      <Text as="h1" variant="title">
+        {t('register.title')}
+      </Text>
     </div>
   )
 }

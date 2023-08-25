@@ -1,0 +1,20 @@
+.button {
+  all: unset;
+  border-radius: 4px;
+  border: 1px solid $black;
+  padding-block: 8px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+
+.button:disabled {
+  background-color: rgba($light-gray, 0.2);
+}
+
+.button-primary {
+  @extend .button;
+}
+.button-secondary {
+  @extend .button;
+}

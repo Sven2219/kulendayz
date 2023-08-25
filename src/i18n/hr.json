@@ -4,7 +4,10 @@
     "emailPlaceholder": "Unesite email",
     "passwordPlaceholder": "Unesite lozinku",
     "emailLabel": "Email",
-    "passwordLabel": "Lozinka"
+    "passwordLabel": "Lozinka",
+    "submitButton": "Potvrdi",
+    "notRegisteredMessage": "Niste član? ",
+    "registerNow": "Registriraj se odmah!"
   },
   "register": {
     "title": "Register zaslon"
