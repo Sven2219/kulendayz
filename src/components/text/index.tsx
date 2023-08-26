@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react'
 
+import styles from './index.module.scss'
 import { TextAs, TextVariant } from './types'
 
 interface Props {
@@ -15,9 +16,10 @@ const Text = ({
   className = '',
   variant = 'label',
 }: Props) => {
+  const dynamicClassName = styles[`${variant}-text`]
   return React.createElement(
     as,
-    { className: `${className} ${variant}-text` },
+    { className: `${className} ${dynamicClassName}` },
     children
   )
 }

@@ -12,21 +12,21 @@
   }
 
   &:disabled {
-    background-color: rgba($light-gray, 0.8);
+    background-color: var(--color-light-gray-800);
     cursor: default;
   }
 }
 
-.button-secondary {
+.secondary-button {
   @extend .button;
-  border: 1px solid $black;
+  border: 1px solid var(--color-black);
 }
 
-.button-primary {
+.primary-button {
   @extend .button;
-  background-color: $orange;
-  color: $white;
+  background-color: var(--color-orange);
+  color: var(--color-white);
   &:disabled {
-    color: $black;
+    color: var(--color-black);
   }
 }

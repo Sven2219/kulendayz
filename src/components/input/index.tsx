@@ -1,3 +1,4 @@
+import styles from './index.module.scss'
 import Text from '../text'
 
 interface Props extends React.HTMLProps<HTMLInputElement> {
@@ -8,15 +9,17 @@ interface Props extends React.HTMLProps<HTMLInputElement> {
 
 const Input = ({ label, error, wrapperClassName = '', ...props }: Props) => {
   return (
-    <div className={`input-wrapper ${wrapperClassName}`}>
-      <Text as="label" className="label">
+    <div className={`${styles['input-container']} ${wrapperClassName}`}>
+      <Text as="label" className={styles.label}>
         {label}
       </Text>
       <input
         {...props}
-        className={`input ${error && 'invalid'} ${props.className}`}
+        className={`${styles.input} ${error && styles.invalid} ${
+          props.className
+        }`}
       />
-      <Text as="span" variant="small" className="error">
+      <Text as="span" variant="small" className={styles['error-message']}>
         {error}
       </Text>
     </div>

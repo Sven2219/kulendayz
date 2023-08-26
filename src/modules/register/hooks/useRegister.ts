@@ -17,7 +17,7 @@ const useRegister = () => {
       return result
     } catch (e) {
       setIsLoading(false)
-      alert(t('login.serverError'))
+      alert(t('register.serverError'))
     }
   }
 

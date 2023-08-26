@@ -2,6 +2,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link, useNavigate } from 'react-router-dom'
 
+import styles from '../shared/style/auth-screen.module.scss'
 import { RoutesNames } from 'src/router/const/routes'
 import Text from 'src/components/text'
 import Input from 'src/components/input'
@@ -10,7 +11,7 @@ import { InputChangeType, InputKeyboardType } from '../shared/types/elements'
 import useRegister from './hooks/useRegister'
 
 import { validateEmail, validatePassword } from '../shared/utils/formValidator'
-import AuthIntro from '../shared/components/AuthIntro'
+import AuthIntro from '../shared/components/authIntro'
 import localStorageKeys from 'src/const/localStorage'
 import { validateRequired } from './utils/formValidator'
 import formReducer, { formDefaultState } from './utils/formValuesReducer'
@@ -20,6 +21,7 @@ const Register = () => {
   const navigate = useNavigate()
   const { register, isLoading } = useRegister()
   const [formState, dispatch] = React.useReducer(formReducer, formDefaultState)
+  const { emailError, passwordError, lastNameError, firstNameError } = formState
 
   const handleSubmit = async () => {
     const response = await register(formState)
@@ -37,26 +39,26 @@ const Register = () => {
   }
 
   return (
-    <div className="screen-wrapper">
-      <div className="left-side">
+    <div className={styles['auth-container']}>
+      <div className={styles['info-panel']}>
         <AuthIntro
           introTitle={t('register.introTitle')}
           introDescription={t('register.introDescription')}
         />
       </div>
-      <div className="right-side">
-        <div className="form-wrapper">
-          <form className="form">
+      <div className={styles['form-panel']}>
+        <div className={styles['centered-content']}>
+          <form className={styles.form}>
             <Text as="h2" variant="title">
               {t('register.title')}
             </Text>
-            <div className="input-form">
-              <div className="input-row">
+            <div className={styles['input-group']}>
+              <div className={styles['input-row']}>
                 <Input
                   type="text"
-                  wrapperClassName="half-width"
+                  wrapperClassName={styles['half-width-input']}
                   label={t('register.firstNameLabel')}
-                  error={formState.firstNameError}
+                  error={firstNameError}
                   placeholder={t('register.firstNamePlaceholder')}
                   onKeyDown={onKeyDown}
                   onChange={(e: InputChangeType) =>
@@ -77,9 +79,9 @@ const Register = () => {
                 />
                 <Input
                   type="text"
-                  wrapperClassName="half-width"
+                  wrapperClassName={styles['half-width-input']}
                   label={t('register.lastNameLabel')}
-                  error={formState.lastNameError}
+                  error={lastNameError}
                   placeholder={t('register.lastNamePlaceholder')}
                   onKeyDown={onKeyDown}
                   onChange={(e: InputChangeType) =>
@@ -102,7 +104,7 @@ const Register = () => {
               <Input
                 type="email"
                 label={t('register.emailLabel')}
-                error={formState.emailError}
+                error={emailError}
                 placeholder={t('register.emailPlaceholder')}
                 onKeyDown={onKeyDown}
                 onChange={(e: InputChangeType) =>
@@ -121,7 +123,7 @@ const Register = () => {
               <Input
                 type="password"
                 label={t('register.passwordLabel')}
-                error={formState.passwordError}
+                error={passwordError}
                 placeholder={t('register.passwordPlaceholder')}
                 onKeyDown={onKeyDown}
                 onChange={(e: InputChangeType) =>
@@ -144,18 +146,18 @@ const Register = () => {
               isLoading={isLoading}
               isDisabled={
                 !!(
-                  formState.emailError ||
-                  formState.passwordError ||
-                  formState.lastNameError ||
-                  formState.firstNameError
+                  emailError ||
+                  passwordError ||
+                  lastNameError ||
+                  firstNameError
                 )
               }
             />
-            <div className="linkable-wrapper">
-              <Text as="span" className="linkable-label">
+            <div className={styles['linkable-wrapper']}>
+              <Text as="span" className={styles['linkable-label']}>
                 {t('register.alreadyRegisteredMessage')}
               </Text>
-              <Link to={RoutesNames.Login} className="linkable-text">
+              <Link to={RoutesNames.Login} className={styles['linkable-text']}>
                 {t('register.loginNow')}
               </Link>
             </div>

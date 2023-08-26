@@ -1,7 +1,9 @@
+import styles from './index.module.scss'
+
 const LoadingIndicator = () => {
   return (
-    <div className="loading-wrapper">
-      <div className="indicator" />
+    <div className={styles['indicator-container']}>
+      <div className={styles.indicator} />
     </div>
   )
 }

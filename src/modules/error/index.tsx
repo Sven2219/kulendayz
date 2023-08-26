@@ -1,8 +1,9 @@
 import errorImage from '/error.png'
+import style from './index.module.scss'
 
 const ErrorScreen = () => {
   return (
-    <div className="error-screen">
+    <div className={style['error-container']}>
       <img src={errorImage} />
     </div>
   )

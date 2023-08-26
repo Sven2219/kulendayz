@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link, useNavigate } from 'react-router-dom'
 
+import styles from '../shared/style/auth-screen.module.scss'
 import { RoutesNames } from 'src/router/const/routes'
 import Text from 'src/components/text'
 import Input from 'src/components/input'
@@ -10,7 +11,7 @@ import { InputChangeType, InputKeyboardType } from '../shared/types/elements'
 import useLogin from './hooks/useLogin'
 
 import { validateEmail, validatePassword } from '../shared/utils/formValidator'
-import AuthIntro from '../shared/components/AuthIntro'
+import AuthIntro from '../shared/components/authIntro'
 import localStorageKeys from 'src/const/localStorage'
 
 const Login = () => {
@@ -46,20 +47,20 @@ const Login = () => {
   }
 
   return (
-    <div className="screen-wrapper">
-      <div className="left-side">
+    <div className={styles['auth-container']}>
+      <div className={styles['info-panel']}>
         <AuthIntro
           introTitle={t('login.introTitle')}
           introDescription={t('login.introDescription')}
         />
       </div>
-      <div className="right-side">
-        <div className="form-wrapper">
-          <form className="form">
+      <div className={styles['form-panel']}>
+        <div className={styles['centered-content']}>
+          <form className={styles.form}>
             <Text as="h2" variant="title">
               {t('login.title')}
             </Text>
-            <div className="input-form">
+            <div className={styles['input-group']}>
               <Input
                 type="email"
                 label={t('login.emailLabel')}
@@ -91,11 +92,13 @@ const Login = () => {
               isLoading={isLoading}
               isDisabled={!!(emailError || passwordError)}
             />
-            <div className="linkable-wrapper">
-              <Text as="span" className="linkable-label">
+            <div className={styles['linkable-wrapper']}>
+              <Text as="span" className={styles['linkable-label']}>
                 {t('login.notRegisteredMessage')}
               </Text>
-              <Link to={RoutesNames.Register} className="linkable-text">
+              <Link
+                to={RoutesNames.Register}
+                className={styles['linkable-text']}>
                 {t('login.registerNow')}
               </Link>
             </div>

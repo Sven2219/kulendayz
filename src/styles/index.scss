@@ -1,11 +1,18 @@
-@import 'reset';
-@import 'colors';
-@import 'sizes';
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
 
-@import '../components/text/';
-@import '../components/button/';
-@import '../components/loadingIndicator/';
-@import '../components/input/';
-
-@import 'src/modules/shared/style';
-@import 'src/modules/error';
+:root {
+  --color-light-gray: #ccc;
+  --color-light-gray-800: rgba(204, 204, 204, 0.8);
+  --color-white: #fff;
+  --color-dim-smoke: #f8f8f8;
+  --color-black: #000;
+  --color-light-blue: #f3f3f3;
+  --color-blue: #3498db;
+  --color-fire-brick: #b22222;
+  --color-orange: #ffa500;
+}

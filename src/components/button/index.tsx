@@ -1,3 +1,4 @@
+import styles from './index.module.scss'
 import LoadingIndicator from '../loadingIndicator'
 import Text from '../text'
 
@@ -19,13 +20,13 @@ const Button = ({
   return (
     <button
       type="button"
-      className={`button-${variant}`}
+      className={styles[`${variant}-button`]}
       onClick={onClick}
       disabled={isLoading || isDisabled}>
       {isLoading ? (
         <LoadingIndicator />
       ) : (
-        <Text as="span" className="button-label">
+        <Text as="span" className={styles['button-label']}>
           {label}
         </Text>
       )}

@@ -1,4 +1,5 @@
 import Text from 'src/components/text'
+import styles from './index.module.scss'
 
 interface Props {
   introTitle: string
@@ -7,11 +8,11 @@ interface Props {
 
 const AuthIntro = ({ introTitle, introDescription }: Props) => {
   return (
-    <div className="intro-wrapper">
-      <Text as="h1" variant="title" className="intro-title">
+    <div className={styles['intro-container']}>
+      <Text as="h1" variant="title" className={styles.title}>
         {introTitle}
       </Text>
-      <Text as="h2" variant="subtitle" className="intro-subtitle">
+      <Text as="h2" variant="subtitle" className={styles.subtitle}>
         {introDescription}
       </Text>
     </div>
