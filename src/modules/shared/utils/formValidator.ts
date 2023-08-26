@@ -1,5 +1,5 @@
 import { TFunction } from 'i18next'
-import { EMAIL_REGEX, PASSWORD_REGEX } from '../const'
+import { EMAIL_REGEX, PASSWORD_REGEX } from '../const/regex'
 
 export const validateEmail = (
   email: string,

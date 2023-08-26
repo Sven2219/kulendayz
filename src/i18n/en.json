@@ -15,7 +15,25 @@
     "introDescription": "We are so happy to have you here. It's is great to see you again. We hope you had a safe and enjoyable time away."
   },
   "register": {
-    "title": "Register screen"
+    "title": "Register",
+    "emailPlaceholder": "Enter your email",
+    "passwordPlaceholder": "Enter your password",
+    "firstNamePlaceholder": "Enter your first name",
+    "lastNamePlaceholder": "Enter your last name",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "firstNameLabel": "First name",
+    "lastNameLabel": "Last name",
+    "submitButton": "Submit",
+    "alreadyRegisteredMessage": "Already a member?",
+    "loginNow": "Log in now!",
+    "emailError": "Email format is not valid",
+    "passwordError": "Password is to weak",
+    "firstNameError": "First name is required",
+    "lastNameError": "Last name is required",
+    "serverError": "Invalid credentials",
+    "introTitle": "Welcome to Demo!",
+    "introDescription": "We are thrilled to have you join us. This is an exciting moment as you start your journey with us. We look forward to providing you with a safe and enjoyable experience."
   },
   "portal": {
     "title": "Portal screen"

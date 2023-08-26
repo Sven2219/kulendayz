@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link, useNavigate } from 'react-router-dom'
 
@@ -6,29 +6,37 @@ import { RoutesNames } from 'src/router/const/routes'
 import Text from 'src/components/text'
 import Input from 'src/components/input'
 import Button from 'src/components/button'
-import { defaultFormState, reducer } from './utils/formReducer'
-import { validateEmail, validatePassword } from './utils/formValidator'
 import { InputChangeType, InputKeyboardType } from '../shared/types/elements'
 import useLogin from './hooks/useLogin'
 
+import { validateEmail, validatePassword } from '../shared/utils/formValidator'
+import AuthIntro from '../shared/components/AuthIntro'
+import localStorageKeys from 'src/const/localStorage'
+
 const Login = () => {
+  const { t } = useTranslation()
   const navigate = useNavigate()
   const { login, isLoading } = useLogin()
-  const [formState, setFormState] = React.useReducer(reducer, defaultFormState)
-  const { t } = useTranslation()
+  const [password, setPassword] = React.useState('')
+  const [email, setEmail] = React.useState(
+    localStorage.getItem(localStorageKeys.EMAIL) ?? ''
+  )
+  const [passwordError, setPasswordError] = useState('')
+  const [emailError, setEmailError] = useState('')
 
   const handleSubmit = async () => {
-    const { email, password } = formState
     const emailError = validateEmail(email, t)
     const passwordError = validatePassword(password, t)
-    console.log(email, password)
     if (emailError || passwordError) {
-      setFormState({ emailError, passwordError })
+      setPasswordError(passwordError)
+      setEmailError(emailError)
       return
     }
-    const result = await login(email, password)
-    localStorage.setItem('token', result as string)
-    navigate(RoutesNames.Portal)
+    const response = await login(email, password)
+    if (response) {
+      localStorage.setItem(localStorageKeys.TOKEN, response)
+      navigate(RoutesNames.Portal)
+    }
   }
 
   const onKeyDown = (event: InputKeyboardType) => {
@@ -40,14 +48,10 @@ const Login = () => {
   return (
     <div className="screen-wrapper">
       <div className="left-side">
-        <div className="intro-wrapper">
-          <Text as="h1" variant="title" className="intro-title">
-            {t('login.introTitle')}
-          </Text>
-          <Text as="h2" variant="subtitle" className="intro-subtitle">
-            {t('login.introDescription')}
-          </Text>
-        </div>
+        <AuthIntro
+          introTitle={t('login.introTitle')}
+          introDescription={t('login.introDescription')}
+        />
       </div>
       <div className="right-side">
         <div className="form-wrapper">
@@ -55,46 +59,40 @@ const Login = () => {
             <Text as="h2" variant="title">
               {t('login.title')}
             </Text>
-            <form className="input-form">
+            <div className="input-form">
               <Input
                 type="email"
                 label={t('login.emailLabel')}
-                error={formState.emailError}
+                error={emailError}
+                value={email}
                 placeholder={t('login.emailPlaceholder')}
                 onKeyDown={onKeyDown}
-                onChange={(e: InputChangeType) =>
-                  setFormState({ email: e.target.value })
+                onChange={(e: InputChangeType) => setEmail(e.target.value)}
+                onBlur={(e: InputChangeType) =>
+                  setEmailError(validateEmail(e.target.value, t))
                 }
-                onBlur={(e: InputChangeType) => {
-                  setFormState({
-                    emailError: validateEmail(e.target.value, t),
-                  })
-                }}
               />
               <Input
                 type="password"
                 label={t('login.passwordLabel')}
-                error={formState.passwordError}
+                error={passwordError}
+                value={password}
                 placeholder={t('login.passwordPlaceholder')}
                 onKeyDown={onKeyDown}
-                onChange={(e: InputChangeType) =>
-                  setFormState({ password: e.target.value })
-                }
+                onChange={(e: InputChangeType) => setPassword(e.target.value)}
                 onBlur={(e: InputChangeType) =>
-                  setFormState({
-                    passwordError: validatePassword(e.target.value, t),
-                  })
+                  setPasswordError(validatePassword(e.target.value, t))
                 }
               />
-            </form>
+            </div>
             <Button
               label={t('login.submitButton')}
               onClick={handleSubmit}
               isLoading={isLoading}
-              isDisabled={!!(formState.emailError || formState.passwordError)}
+              isDisabled={!!(emailError || passwordError)}
             />
             <div className="linkable-wrapper">
-              <Text as="span" className="registration-label">
+              <Text as="span" className="linkable-label">
                 {t('login.notRegisteredMessage')}
               </Text>
               <Link to={RoutesNames.Register} className="linkable-text">

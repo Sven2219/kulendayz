@@ -62,6 +62,15 @@
 
         .input-form {
           margin-block: 32px;
+
+          .input-row {
+            display: flex;
+            gap: 20px;
+
+            .half-width {
+              width: 50%;
+            }
+          }
         }
 
         .linkable-wrapper {
@@ -70,7 +79,7 @@
           align-items: center;
           margin-top: 12px;
 
-          .registration-label {
+          .linkable-label {
             margin-right: 4px;
           }
         }

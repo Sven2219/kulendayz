@@ -1,7 +1,6 @@
 .button {
   all: unset;
   border-radius: 4px;
-  border: 1px solid $black;
   padding-block: 8px;
   cursor: pointer;
   width: 100%;
@@ -20,12 +19,12 @@
 
 .button-secondary {
   @extend .button;
+  border: 1px solid $black;
 }
 
 .button-primary {
   @extend .button;
   background-color: $orange;
-  border: unset;
   color: $white;
   &:disabled {
     color: $black;

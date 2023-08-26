@@ -1,21 +1,19 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import localStorageKeys from 'src/const/localStorage'
+import { FormState } from '../utils/formValuesReducer'
 
-const useLogin = () => {
+const useRegister = () => {
   const { t } = useTranslation()
   const [isLoading, setIsLoading] = React.useState(false)
 
-  const login = async (
-    email: string,
-    password: string
+  const register = async (
+    formValuesState: FormState
   ): Promise<string | undefined> => {
     try {
       setIsLoading(true)
-      const result = await loginMock(email, password)
+      const result = await registerMock(formValuesState)
       setIsLoading(false)
-      localStorage.removeItem(localStorageKeys.EMAIL)
       return result
     } catch (e) {
       setIsLoading(false)
@@ -23,14 +21,19 @@ const useLogin = () => {
     }
   }
 
-  return { isLoading, login }
+  return { isLoading, register }
 }
 
-const loginMock = (email: string, password: string): Promise<string> => {
+const registerMock = ({
+  email,
+  password,
+  firstName,
+  lastName,
+}: FormState): Promise<string> => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (email && password) {
-        resolve('New token')
+      if (email && password && firstName && lastName) {
+        resolve('Success')
       } else {
         reject('Something went wrong')
       }
@@ -38,4 +41,4 @@ const loginMock = (email: string, password: string): Promise<string> => {
   })
 }
 
-export default useLogin
+export default useRegister

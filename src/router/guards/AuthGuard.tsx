@@ -1,9 +1,10 @@
 import { Outlet, Navigate } from 'react-router-dom'
 
 import { RoutesNames } from '../const/routes'
+import localStorageKeys from 'src/const/localStorage'
 
 const AuthGuard = () => {
-  const isLoggedIn = localStorage.getItem('token')
+  const isLoggedIn = localStorage.getItem(localStorageKeys.TOKEN)
 
   if (!isLoggedIn) {
     return <Outlet />

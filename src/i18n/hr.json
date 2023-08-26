@@ -1,20 +1,35 @@
 {
   "login": {
-    "title": "Login zaslon",
-    "emailPlaceholder": "Unesite email",
-    "passwordPlaceholder": "Unesite lozinku",
+    "title": "Prijava",
+    "emailPlaceholder": "Unesite svoj email",
+    "passwordPlaceholder": "Unesite svoju lozinku",
     "emailLabel": "Email",
     "passwordLabel": "Lozinka",
-    "submitButton": "Potvrdi",
-    "notRegisteredMessage": "Niste član? ",
-    "registerNow": "Registriraj se odmah!",
-    "emailError": "Email format nije validan",
+    "submitButton": "Prijavi se",
+    "notRegisteredMessage": "Niste član?",
+    "registerNow": "Registrirajte se sada!",
+    "emailError": "Format emaila nije valjan",
     "passwordError": "Lozinka je preslaba",
-    "introTitle": "Dobrodošli natrag na demo!",
-    "introDescription": "Jako smo sretni što vas imamo ovdje. Divno je vidjeti vas ponovno. Nadamo se da ste proveli sigurno i ugodno vrijeme dok vas nije bilo."
+    "serverError": "Nevaljane akreditacije",
+    "introTitle": "Dobrodošli nazad na demo!",
+    "introDescription": "Izuzetno smo sretni što ste opet s nama. Jako nam je drago što vas ponovno vidimo. Nadamo se da ste proveli sigurno i ugodno vrijeme dok vas nije bilo."
   },
   "register": {
-    "title": "Register zaslon"
+    "title": "Registracija",
+    "emailPlaceholder": "Unesite svoj email",
+    "passwordPlaceholder": "Unesite svoju lozinku",
+    "emailLabel": "Email",
+    "passwordLabel": "Lozinka",
+    "submitButton": "Pošalji",
+    "alreadyRegisteredMessage": "Već ste član?",
+    "loginNow": "Prijavite se sada!",
+    "emailError": "Format emaila nije valjan",
+    "passwordError": "Lozinka je prešlaba",
+    "firstNameError": "Ime je obavezno",
+    "lastNameError": "Prezime je obavezno",
+    "serverError": "Nevaljane akreditacije",
+    "introTitle": "Dobrodošli na Demo!",
+    "introDescription": "Izuzetno nam je drago što ste nam se pridružili. Ovo je uzbudljiv trenutak dok započinjete svoje putovanje s nama. Radujemo se pružanju sigurnog i ugodnog iskustva."
   },
   "portal": {
     "title": "Portal zaslon"
