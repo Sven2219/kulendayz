@@ -44,7 +44,7 @@ const Login = () => {
           <Text as="h1" variant="title" className="intro-title">
             {t('login.introTitle')}
           </Text>
-          <Text as="h2" variant="subtitle">
+          <Text as="h2" variant="subtitle" className="intro-subtitle">
             {t('login.introDescription')}
           </Text>
         </div>

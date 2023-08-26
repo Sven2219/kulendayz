@@ -6,7 +6,7 @@
   .side {
     display: flex;
     flex: 1;
-    background-color: $dim-smoke;
+    background-color: $orange;
   }
 
   .center {
@@ -32,6 +32,10 @@
       padding-inline: 80px;
       .intro-title {
         margin-bottom: 20px;
+        color: $white;
+      }
+      .intro-subtitle {
+        color: $white;
       }
     }
   }
