@@ -15,7 +15,7 @@
   }
 
   .left-side {
-    @media (max-width: 1000px) {
+    @media (max-width: $base-width) {
       display: none;
     }
 
@@ -47,7 +47,9 @@
       display: flex;
       flex: 1;
       @extend .center;
-
+      @media (max-width: $base-width) {
+        border-bottom-left-radius: unset;
+      }
       background-color: $white;
       border-bottom-left-radius: 10%;
 
