@@ -6,16 +6,17 @@
   align-items: center;
 
   .indicator {
-    border: 4px solid $light-blue;
-    border-top: 4px solid $blue;
-    border-radius: 50%;
     width: 24px;
     height: 24px;
-    animation: spin 2s linear infinite;
-    text-align: center;
+    border: 4px solid $blue;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
   }
 
-  @keyframes spin {
+  @keyframes rotation {
     0% {
       transform: rotate(0deg);
     }

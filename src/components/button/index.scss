@@ -6,16 +6,28 @@
   cursor: pointer;
   width: 100%;
   text-align: center;
+
+  .button-label {
+    display: block;
+    padding-block: 2px;
+  }
+
+  &:disabled {
+    background-color: rgba($light-gray, 0.8);
+    cursor: default;
+  }
 }
 
-.button:disabled {
-  background-color: rgba($light-gray, 0.2);
-  cursor: default;
+.button-secondary {
+  @extend .button;
 }
 
 .button-primary {
   @extend .button;
-}
-.button-secondary {
-  @extend .button;
+  background-color: $blue;
+  border: unset;
+  color: $white;
+  &:disabled {
+    color: $black;
+  }
 }

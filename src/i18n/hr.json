@@ -9,7 +9,9 @@
     "notRegisteredMessage": "Niste član? ",
     "registerNow": "Registriraj se odmah!",
     "emailError": "Email format nije validan",
-    "passwordError": "Lozinka je preslaba"
+    "passwordError": "Lozinka je preslaba",
+    "introTitle": "Dobrodošli natrag na demo!",
+    "introDescription": "Jako smo sretni što vas imamo ovdje. Divno je vidjeti vas ponovno. Nadamo se da ste proveli sigurno i ugodno vrijeme dok vas nije bilo."
   },
   "register": {
     "title": "Register zaslon"

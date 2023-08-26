@@ -1,8 +1,9 @@
 import { Navigate, Outlet } from 'react-router-dom'
+
 import { RoutesNames } from '../const/routes'
 
 const PortalGuard = () => {
-  const isLoggedIn = false
+  const isLoggedIn = localStorage.getItem('token')
 
   if (isLoggedIn) {
     return <Outlet />

@@ -1,4 +1,5 @@
 import LoadingIndicator from '../loadingIndicator'
+import Text from '../text'
 
 interface Props {
   label: string
@@ -21,7 +22,13 @@ const Button = ({
       className={`button-${variant}`}
       onClick={onClick}
       disabled={isLoading || isDisabled}>
-      {isLoading ? <LoadingIndicator /> : label}
+      {isLoading ? (
+        <LoadingIndicator />
+      ) : (
+        <Text as="span" className="button-label">
+          {label}
+        </Text>
+      )}
     </button>
   )
 }

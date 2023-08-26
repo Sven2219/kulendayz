@@ -9,7 +9,10 @@
     "notRegisteredMessage": "Not a member?",
     "registerNow": "Register now!",
     "emailError": "Email format is not valid",
-    "passwordError": "Password is to weak"
+    "passwordError": "Password is to weak",
+    "serverError": "Invalid credentials",
+    "introTitle": "Welcome back to demo!",
+    "introDescription": "We are so happy to have you here. It's is great to see you again. We hope you had a safe and enjoyable time away."
   },
   "register": {
     "title": "Register screen"

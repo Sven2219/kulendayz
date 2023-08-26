@@ -11,7 +11,7 @@ const Input = ({ label, error, ...props }: Props) => {
       <Text as="label" className="label">
         {label}
       </Text>
-      <input className="input" {...props} />
+      <input className={`input ${error && 'invalid'}`} {...props} />
       <Text as="span" variant="small" className="error">
         {error}
       </Text>
