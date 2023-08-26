@@ -4,9 +4,9 @@ import { RoutesNames } from '../const/routes'
 import localStorageKeys from 'src/const/localStorage'
 
 const AuthGuard = () => {
-  const isLoggedIn = localStorage.getItem(localStorageKeys.TOKEN)
+  const token = localStorage.getItem(localStorageKeys.TOKEN)
 
-  if (!isLoggedIn) {
+  if (!token) {
     return <Outlet />
   }
 
