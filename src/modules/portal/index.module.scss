@@ -1,3 +1,9 @@
 .portal-container {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .portal-body {
+    flex: 1;
+  }
 }

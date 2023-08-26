@@ -36,6 +36,8 @@
     "introDescription": "We are thrilled to have you join us. This is an exciting moment as you start your journey with us. We look forward to providing you with a safe and enjoyable experience."
   },
   "portal": {
-    "title": "Portal screen"
+    "title": "Portal screen",
+    "demoPortal": "Demo Portal",
+    "userRole": "Guest"
   }
 }

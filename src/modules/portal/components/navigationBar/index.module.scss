@@ -1,0 +1,26 @@
+.navigation-bar-container {
+  width: 100%;
+  border-bottom: 1px solid var(--color-orange);
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+
+  .user-info-group {
+    display: flex;
+    margin-right: 20px;
+    .user-full-name-text {
+    }
+    .user-role-text {
+      text-align: center;
+      color: #333333;
+    }
+    .user-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--color-black);
+      border: 1px solid var(--color-black);
+      margin-right: 20px;
+    }
+  }
+}

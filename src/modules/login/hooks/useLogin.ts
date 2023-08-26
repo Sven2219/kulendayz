@@ -30,7 +30,9 @@ const loginMock = (email: string, password: string): Promise<string> => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (email && password) {
-        resolve('New token')
+        resolve(
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiaWQiOiIwIiwiZmlyc3ROYW1lIjoiU3ZlbiIsImxhc3ROYW1lIjoiU3VrIiwiZW1haWwiOiJzdmVuLnN1azVAZ21haWwuY29tIiwiaWF0IjoxNTE2MjM5MDIyfQ.Vso5hnq-WUH_5cwRW3_o53H87bg7x-YQsN9vTfFKP0k'
+        )
       } else {
         reject('Something went wrong')
       }
