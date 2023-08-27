@@ -1,4 +1,4 @@
-import { User } from 'src/types/User'
+import { User } from 'src/types/user'
 
 const users: User[] = new Array(20).fill(0).map((_, index) => ({
   id: index.toString(),

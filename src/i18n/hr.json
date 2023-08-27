@@ -1,37 +1,46 @@
 {
   "login": {
     "title": "Prijava",
-    "emailPlaceholder": "Unesite svoj email",
+    "emailPlaceholder": "Unesite svoju email adresu",
     "passwordPlaceholder": "Unesite svoju lozinku",
     "emailLabel": "Email",
     "passwordLabel": "Lozinka",
-    "submitButton": "Prijavi se",
+    "submitButton": "Prijava",
     "notRegisteredMessage": "Niste član?",
     "registerNow": "Registrirajte se sada!",
-    "emailError": "Format emaila nije valjan",
+    "emailError": "Format email adrese nije ispravan",
     "passwordError": "Lozinka je preslaba",
-    "serverError": "Nevaljane akreditacije",
-    "introTitle": "Dobrodošli nazad na demo!",
-    "introDescription": "Izuzetno smo sretni što ste opet s nama. Jako nam je drago što vas ponovno vidimo. Nadamo se da ste proveli sigurno i ugodno vrijeme dok vas nije bilo."
+    "serverError": "Nevaljane prijavne informacije",
+    "introTitle": "Dobro došli natrag na demonstraciju!",
+    "introDescription": "Jako smo sretni što ste ovdje. Drago nam je ponovno vas vidjeti. Nadamo se da ste sigurno i ugodno proveli vrijeme dok ste bili odsutni."
   },
   "register": {
     "title": "Registracija",
-    "emailPlaceholder": "Unesite svoj email",
+    "emailPlaceholder": "Unesite svoju email adresu",
     "passwordPlaceholder": "Unesite svoju lozinku",
+    "firstNamePlaceholder": "Unesite svoje ime",
+    "lastNamePlaceholder": "Unesite svoje prezime",
     "emailLabel": "Email",
     "passwordLabel": "Lozinka",
-    "submitButton": "Pošalji",
+    "firstNameLabel": "Ime",
+    "lastNameLabel": "Prezime",
+    "submitButton": "Registracija",
     "alreadyRegisteredMessage": "Već ste član?",
     "loginNow": "Prijavite se sada!",
-    "emailError": "Format emaila nije valjan",
-    "passwordError": "Lozinka je prešlaba",
+    "emailError": "Format email adrese nije ispravan",
+    "passwordError": "Lozinka je preslaba",
     "firstNameError": "Ime je obavezno",
     "lastNameError": "Prezime je obavezno",
-    "serverError": "Nevaljane akreditacije",
-    "introTitle": "Dobrodošli na Demo!",
-    "introDescription": "Izuzetno nam je drago što ste nam se pridružili. Ovo je uzbudljiv trenutak dok započinjete svoje putovanje s nama. Radujemo se pružanju sigurnog i ugodnog iskustva."
+    "serverError": "Nevaljane prijavne informacije",
+    "introTitle": "Dobrodošli na demonstraciju!",
+    "introDescription": "Iznimno nam je drago što ste nam se pridružili. Ovo je uzbuđujući trenutak dok započinjete svoje putovanje s nama. Veselimo se pružanju sigurnog i ugodnog iskustva."
   },
   "portal": {
-    "title": "Portal zaslon"
+    "demoPortal": "Demo Portal",
+    "logout": "Odjava",
+    "userTableID": "ID",
+    "userTableEmail": "Email",
+    "userTableFirstName": "Ime",
+    "userTableLastName": "Prezime"
   }
 }

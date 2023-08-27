@@ -13,7 +13,7 @@ import useRegister from './hooks/useRegister'
 import { validateEmail, validatePassword } from '../shared/utils/formValidator'
 import AuthIntro from '../shared/components/authIntro'
 import localStorageKeys from 'src/const/localStorage'
-import { validateRequired } from './utils/formValidator'
+import { validateForm, validateRequired } from './utils/formValidator'
 import formReducer, { formDefaultState } from './utils/formValuesReducer'
 
 const Register = () => {
@@ -24,22 +24,11 @@ const Register = () => {
   const { emailError, passwordError, lastNameError, firstNameError } = formState
 
   const handleSubmit = async () => {
-    const emailError = validateEmail(formState.email, t)
-    const passwordError = validatePassword(formState.password, t)
-    if (
-      emailError ||
-      passwordError ||
-      !formState.firstName ||
-      !formState.lastName
-    ) {
+    const { isInvalid, payload } = validateForm(formState, t)
+    if (isInvalid) {
       dispatch({
         type: 'UPDATE_ERRORS',
-        payload: {
-          emailError,
-          passwordError,
-          firstNameError: t('register.firstNameError'),
-          lastNameError: t('register.lastNameError'),
-        },
+        payload,
       })
       return
     }

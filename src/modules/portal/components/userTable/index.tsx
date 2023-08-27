@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next'
+
 import { User } from 'src/types/user'
 import styles from './index.module.scss'
 
@@ -6,14 +8,15 @@ interface Props {
 }
 
 const UserTable = ({ users }: Props) => {
+  const { t } = useTranslation()
   return (
     <table className={styles['table-container']}>
       <thead>
         <tr>
-          <th>ID</th>
-          <th>Email</th>
-          <th>First Name</th>
-          <th>Last Name</th>
+          <th>{t('portal.userTableID')}</th>
+          <th>{t('portal.userTableEmail')}</th>
+          <th>{t('portal.userTableFirstName')}</th>
+          <th>{t('portal.userTableLastName')}</th>
         </tr>
       </thead>
       <tbody>
