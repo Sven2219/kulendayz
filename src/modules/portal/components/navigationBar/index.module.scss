@@ -3,17 +3,35 @@
   border-bottom: 1px solid var(--color-orange);
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 16px;
 
   .user-info-group {
     display: flex;
     margin-right: 20px;
-    .user-full-name-text {
+    justify-content: center;
+    align-items: center;
+
+    .user-options-position {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      .user-full-name-text {
+        color: var(--color-orange);
+        font-weight: bold;
+      }
+
+      .logout-button {
+        all: unset;
+        cursor: pointer;
+        .logout-text {
+          text-align: center;
+          color: #333333;
+        }
+      }
     }
-    .user-role-text {
-      text-align: center;
-      color: #333333;
-    }
+
     .user-icon {
       width: 40px;
       height: 40px;

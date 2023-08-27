@@ -38,6 +38,6 @@
   "portal": {
     "title": "Portal screen",
     "demoPortal": "Demo Portal",
-    "userRole": "Guest"
+    "logout": "Logout"
   }
 }

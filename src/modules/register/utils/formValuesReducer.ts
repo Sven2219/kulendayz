@@ -20,6 +20,15 @@ export type FormAction =
   | { type: 'UPDATE_PASSWORD_ERROR'; payload: string }
   | { type: 'UPDATE_LAST_NAME_ERROR'; payload: string }
   | { type: 'UPDATE_FIRST_NAME_ERROR'; payload: string }
+  | {
+      type: 'UPDATE_ERRORS'
+      payload: {
+        emailError: string
+        passwordError: string
+        firstNameError: string
+        lastNameError: string
+      }
+    }
 
 const formReducer: Reducer<FormState, FormAction> = (
   state: FormState,
@@ -42,6 +51,8 @@ const formReducer: Reducer<FormState, FormAction> = (
       return { ...state, lastNameError: action.payload }
     case 'UPDATE_FIRST_NAME_ERROR':
       return { ...state, firstNameError: action.payload }
+    case 'UPDATE_ERRORS':
+      return { ...state, ...action.payload }
     default:
       return state
   }

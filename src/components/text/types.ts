@@ -10,4 +10,9 @@ export type TextAs =
   | 'mark'
   | 'label'
 
-export type TextVariant = 'title' | 'subtitle' | 'label' | 'small'
+export type TextVariant =
+  | 'title'
+  | 'title-medium'
+  | 'subtitle'
+  | 'label'
+  | 'small'

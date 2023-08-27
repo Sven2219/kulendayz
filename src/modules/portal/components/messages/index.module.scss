@@ -1,0 +1,12 @@
+.message-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .message-item {
+    padding: 8px;
+    background-color: var(--color-light-green);
+
+    width: 100%;
+  }
+}

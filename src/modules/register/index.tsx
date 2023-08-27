@@ -24,10 +24,29 @@ const Register = () => {
   const { emailError, passwordError, lastNameError, firstNameError } = formState
 
   const handleSubmit = async () => {
+    const emailError = validateEmail(formState.email, t)
+    const passwordError = validatePassword(formState.password, t)
+    if (
+      emailError ||
+      passwordError ||
+      !formState.firstName ||
+      !formState.lastName
+    ) {
+      dispatch({
+        type: 'UPDATE_ERRORS',
+        payload: {
+          emailError,
+          passwordError,
+          firstNameError: t('register.firstNameError'),
+          lastNameError: t('register.lastNameError'),
+        },
+      })
+      return
+    }
+
     const response = await register(formState)
     if (response) {
       localStorage.setItem(localStorageKeys.EMAIL, formState.email)
-      console.log('local', localStorageKeys.EMAIL)
       navigate(RoutesNames.Login)
     }
   }

@@ -17,6 +17,7 @@ const PortalGuard = () => {
       const token = localStorage.getItem(localStorageKeys.TOKEN)
       if (token) {
         const { email, firstName, lastName, id } = jwtDecode<JWTToken>(token)
+        console.log('token', token)
         setUser({ email, firstName, lastName, id })
       }
       setIsLoading(false)
