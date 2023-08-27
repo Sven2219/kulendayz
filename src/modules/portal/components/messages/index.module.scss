@@ -5,7 +5,10 @@
 
   .message-item {
     padding: 8px;
-    background-color: var(--color-light-green);
+    border-bottom: 0.5px solid var(--color-black);
+    display: flex;
+    align-items: center;
+
     width: 100%;
   }
 }

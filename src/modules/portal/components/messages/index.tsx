@@ -10,9 +10,11 @@ const Messages = ({ messages }: Props) => {
   console.log(messages)
   return (
     <div className={styles['message-container']}>
-      {messages.map((el) => (
+      {messages.map((el, index) => (
         <div className={styles['message-item']} key={el.id}>
-          <Text>{el.message}</Text>
+          <Text>
+            Message {index}: {el.message}
+          </Text>
         </div>
       ))}
     </div>
