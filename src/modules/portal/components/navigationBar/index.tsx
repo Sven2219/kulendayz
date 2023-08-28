@@ -16,13 +16,13 @@ const NavigationBar = () => {
   }
 
   return (
-    <div className={styles['navigation-bar-container']}>
+    <nav className={styles['navigation-bar-container']}>
       <div>
-        <Text as="h2" variant="title-medium">
+        <Text as="h1" variant="title-medium">
           {t('portal.demoPortal')}
         </Text>
       </div>
-      <div className={styles['user-info-group']}>
+      <section className={styles['user-info-group']}>
         <img src="/user.png" alt="User" />
         <div className={styles['user-options-position']}>
           <Text
@@ -33,8 +33,8 @@ const NavigationBar = () => {
             <Text className={styles['logout-text']}>{t('portal.logout')}</Text>
           </button>
         </div>
-      </div>
-    </div>
+      </section>
+    </nav>
   )
 }
 

@@ -4,11 +4,11 @@
   gap: 20px;
 
   .message-item {
+    all: unset;
     padding: 8px;
     border-bottom: 0.5px solid var(--color-black);
     display: flex;
     align-items: center;
-
     width: 100%;
   }
 }

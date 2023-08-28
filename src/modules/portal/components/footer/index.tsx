@@ -1,15 +1,17 @@
+import icons from './icons'
 import styles from './index.module.scss'
 
 const Footer = () => {
   return (
-    <div className={styles['footer-container']}>
-      <div className={styles['footer-element']}>
-        <img src="/icons/facebook.svg" alt="Facebook" />
-        <img src="/icons/instagram.svg" alt="Instagram" />
-        <img src="/icons/youtube.svg" alt="YouTube" />
-        <img src="/icons/linkedin.svg" alt="LinkedIn" />
-      </div>
-    </div>
+    <footer className={styles['footer-container']}>
+      <ul className={styles['footer-list']}>
+        {icons.map((el) => (
+          <li key={el.name} className={styles['footer-item']}>
+            <img src={el.src} alt={el.name} />
+          </li>
+        ))}
+      </ul>
+    </footer>
   )
 }
 

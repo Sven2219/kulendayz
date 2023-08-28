@@ -7,17 +7,16 @@ interface Props {
 }
 
 const Messages = ({ messages }: Props) => {
-  console.log(messages)
   return (
-    <div className={styles['message-container']}>
+    <ul className={styles['message-container']}>
       {messages.map((el, index) => (
-        <div className={styles['message-item']} key={el.id}>
+        <li className={styles['message-item']} key={el.id}>
           <Text>
             Message {index}: {el.message}
           </Text>
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   )
 }
 

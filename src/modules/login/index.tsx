@@ -48,13 +48,13 @@ const Login = () => {
 
   return (
     <div className={styles['auth-container']}>
-      <div className={styles['info-panel']}>
+      <section className={styles['info-panel']}>
         <AuthIntro
           introTitle={t('login.introTitle')}
           introDescription={t('login.introDescription')}
         />
-      </div>
-      <div className={styles['form-panel']}>
+      </section>
+      <section className={styles['form-panel']}>
         <div className={styles['centered-content']}>
           <form className={styles.form}>
             <Text as="h2" variant="title">
@@ -104,7 +104,7 @@ const Login = () => {
             </div>
           </form>
         </div>
-      </div>
+      </section>
     </div>
   )
 }
