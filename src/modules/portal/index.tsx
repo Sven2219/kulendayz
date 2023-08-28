@@ -38,21 +38,19 @@ const Portal = () => {
   return (
     <div className={styles['portal-container']}>
       <NavigationBar />
-      <div className={styles['portal-body']}>
-        <div className={styles['tab-content']}>
-          <Tab
-            title="Users"
-            isActive={activeTab === ActiveTab.USERS}
-            onClick={() => setActiveTab(ActiveTab.USERS)}
-          />
-          <Tab
-            title="Messages"
-            isActive={activeTab === ActiveTab.MESSAGES}
-            onClick={() => setActiveTab(ActiveTab.MESSAGES)}
-          />
-        </div>
-        {getPreview()}
+      <div className={styles['tab-content']}>
+        <Tab
+          title="Users"
+          isActive={activeTab === ActiveTab.USERS}
+          onClick={() => setActiveTab(ActiveTab.USERS)}
+        />
+        <Tab
+          title="Messages"
+          isActive={activeTab === ActiveTab.MESSAGES}
+          onClick={() => setActiveTab(ActiveTab.MESSAGES)}
+        />
       </div>
+      <div className={styles['portal-preview']}>{getPreview()}</div>
       <Footer />
     </div>
   )

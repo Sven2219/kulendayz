@@ -1,9 +1,13 @@
 .table-container {
   border-collapse: collapse;
-  margin: 25px 0;
-
   min-width: 400px;
   box-shadow: 0 0 20px var(--color-light-gray-800);
+  overflow: scroll;
+}
+
+.table-container thead {
+  position: sticky;
+  top: 0;
 }
 
 .table-container thead tr {
