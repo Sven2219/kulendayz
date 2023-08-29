@@ -7,16 +7,13 @@ const useLogin = () => {
   const { t } = useTranslation()
   const [isLoading, setIsLoading] = React.useState(false)
 
-  const login = async (
-    email: string,
-    password: string
-  ): Promise<string | undefined> => {
+  const login = async (email: string, password: string): Promise<void> => {
     try {
       setIsLoading(true)
       const result = await loginMock(email, password)
       setIsLoading(false)
       localStorage.removeItem(localStorageKeys.EMAIL)
-      return result
+      localStorage.setItem(localStorageKeys.TOKEN, result)
     } catch (e) {
       setIsLoading(false)
       alert(t('login.serverError'))

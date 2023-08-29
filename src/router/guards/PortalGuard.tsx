@@ -32,6 +32,7 @@ const PortalGuard = () => {
     }
     return <Navigate to={RoutesNames.Login} replace />
   }
+
   return <></>
 }
 

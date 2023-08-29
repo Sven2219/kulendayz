@@ -17,7 +17,9 @@ import localStorageKeys from 'src/const/localStorage'
 const Login = () => {
   const { t } = useTranslation()
   const navigate = useNavigate()
+
   const { login, isLoading } = useLogin()
+
   const [password, setPassword] = React.useState('')
   const [email, setEmail] = React.useState(
     localStorage.getItem(localStorageKeys.EMAIL) ?? ''
@@ -33,11 +35,8 @@ const Login = () => {
       setEmailError(emailError)
       return
     }
-    const response = await login(email, password)
-    if (response) {
-      localStorage.setItem(localStorageKeys.TOKEN, response)
-      navigate(RoutesNames.Portal)
-    }
+    await login(email, password)
+    navigate(RoutesNames.Portal)
   }
 
   const onKeyDown = (event: InputKeyboardType) => {

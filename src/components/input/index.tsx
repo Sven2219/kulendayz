@@ -16,7 +16,7 @@ const Input = ({ label, error, wrapperClassName = '', ...props }: Props) => {
       <input
         {...props}
         className={`${styles.input} ${error && styles.invalid} ${
-          props.className
+          props.className ?? ''
         }`}
       />
       <Text as="span" variant="small" className={styles['error-message']}>

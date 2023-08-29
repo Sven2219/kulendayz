@@ -17,6 +17,7 @@ const Text = ({
   variant = 'label',
 }: Props) => {
   const dynamicClassName = styles[`${variant}-text`]
+
   return React.createElement(
     as,
     { className: `${className} ${dynamicClassName}` },
