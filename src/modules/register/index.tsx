@@ -9,7 +9,6 @@ import useRegister from './hooks/useRegister'
 
 import { validateEmail, validatePassword } from '../shared/utils/formValidator'
 import AuthIntro from '../shared/components/authIntro'
-import localStorageKeys from 'src/const/localStorage'
 import { validateForm, validateRequired } from './utils/formValidator'
 import formReducer, { formDefaultState } from './utils/formValuesReducer'
 import Text from '../shared/components/text'
@@ -35,7 +34,6 @@ const Register = () => {
     }
 
     await register(formState)
-
     navigate(RoutesNames.Login)
   }
 
