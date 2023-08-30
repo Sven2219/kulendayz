@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link, useNavigate } from 'react-router-dom'
 
@@ -23,8 +23,8 @@ const Login = () => {
   const [email, setEmail] = React.useState(
     localStorage.getItem(localStorageKeys.EMAIL) ?? ''
   )
-  const [passwordError, setPasswordError] = useState('')
-  const [emailError, setEmailError] = useState('')
+  const [passwordError, setPasswordError] = React.useState('')
+  const [emailError, setEmailError] = React.useState('')
 
   const handleSubmit = async () => {
     const emailError = validateEmail(email, t)
