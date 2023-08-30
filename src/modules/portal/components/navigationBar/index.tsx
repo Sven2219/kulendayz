@@ -1,10 +1,10 @@
 import { useAtom } from 'jotai'
 import { useTranslation } from 'react-i18next'
 
-import Text from 'src/components/text'
 import styles from './index.module.scss'
 import { userAtom } from 'src/atoms/user'
 import localStorageKeys from 'src/const/localStorage'
+import Text from 'src/modules/shared/components/text'
 
 const NavigationBar = () => {
   const { t } = useTranslation()

@@ -1,6 +1,6 @@
-import Text from 'src/components/text'
 import { Message } from 'src/types/message'
 import styles from './index.module.scss'
+import Text from 'src/modules/shared/components/text'
 
 interface Props {
   messages: Message[]

@@ -1,4 +1,4 @@
-import Text from 'src/components/text'
+import Text from '../text'
 import styles from './index.module.scss'
 
 interface Props {

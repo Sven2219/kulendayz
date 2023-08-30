@@ -4,15 +4,14 @@ import { Link, useNavigate } from 'react-router-dom'
 
 import styles from '../shared/style/auth-screen.module.scss'
 import { RoutesNames } from 'src/router/const/routes'
-import Text from 'src/components/text'
-import Input from 'src/components/input'
-import Button from 'src/components/button'
 import { InputChangeType, InputKeyboardType } from '../shared/types/elements'
 import useLogin from './hooks/useLogin'
-
 import { validateEmail, validatePassword } from '../shared/utils/formValidator'
 import AuthIntro from '../shared/components/authIntro'
 import localStorageKeys from 'src/const/localStorage'
+import Input from '../shared/components/input'
+import Button from '../shared/components/button'
+import Text from '../shared/components/text'
 
 const Login = () => {
   const { t } = useTranslation()
