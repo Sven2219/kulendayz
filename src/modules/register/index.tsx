@@ -34,11 +34,9 @@ const Register = () => {
       return
     }
 
-    const response = await register(formState)
-    if (response) {
-      localStorage.setItem(localStorageKeys.EMAIL, formState.email)
-      navigate(RoutesNames.Login)
-    }
+    await register(formState)
+
+    navigate(RoutesNames.Login)
   }
 
   const onKeyDown = (event: InputKeyboardType) => {

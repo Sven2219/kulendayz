@@ -2,19 +2,18 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { FormState } from '../utils/formValuesReducer'
+import localStorageKeys from 'src/const/localStorage'
 
 const useRegister = () => {
   const { t } = useTranslation()
   const [isLoading, setIsLoading] = React.useState(false)
 
-  const register = async (
-    formValuesState: FormState
-  ): Promise<string | undefined> => {
+  const register = async (formValuesState: FormState): Promise<void> => {
     try {
       setIsLoading(true)
-      const result = await registerMock(formValuesState)
+      await registerMock(formValuesState)
+      localStorage.setItem(localStorageKeys.EMAIL, formValuesState.email)
       setIsLoading(false)
-      return result
     } catch (e) {
       setIsLoading(false)
       alert(t('register.serverError'))

@@ -19,9 +19,9 @@ const Portal = () => {
 
   React.useEffect(() => {
     if (!users.length && activeTab === ActiveTab.USERS) {
-      mockGetUsers().then(setUsers)
+      mockGetUsers().then((users) => setUsers(users))
     } else if (!messages.length && activeTab === ActiveTab.MESSAGES) {
-      mockGetMessages().then(setMessages)
+      mockGetMessages().then((messages) => setMessages(messages))
     }
   }, [users, messages, activeTab])
 
