@@ -1,8 +1,6 @@
 import React from 'react'
 
 import styles from './index.module.scss'
-import { mockGetUsers } from './mock/users'
-import { mockGetMessages } from './mock/messages'
 import { Message } from 'src/types/message'
 import NavigationBar from './components/navigationBar'
 import Footer from './components/footer'
@@ -11,6 +9,7 @@ import Tab from './components/tab'
 import { ActiveTab } from './types/activeTab'
 import Messages from './components/messages'
 import UserTable from './components/userTable'
+import { axiosInstance } from 'src/service'
 
 const Portal = () => {
   const [activeTab, setActiveTab] = React.useState(ActiveTab.USERS)
@@ -19,9 +18,11 @@ const Portal = () => {
 
   React.useEffect(() => {
     if (!users.length && activeTab === ActiveTab.USERS) {
-      mockGetUsers().then((users) => setUsers(users))
+      axiosInstance.get('/user/1').then((response) => setUsers(response.data))
     } else if (!messages.length && activeTab === ActiveTab.MESSAGES) {
-      mockGetMessages().then((messages) => setMessages(messages))
+      axiosInstance
+        .get('infobip/1/messages')
+        .then((response) => setMessages(response.data))
     }
   }, [users, messages, activeTab])
 

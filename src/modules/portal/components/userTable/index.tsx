@@ -9,6 +9,7 @@ interface Props {
 
 const UserTable = ({ users }: Props) => {
   const { t } = useTranslation()
+
   return (
     <table className={styles['table-container']}>
       <thead>
@@ -20,9 +21,9 @@ const UserTable = ({ users }: Props) => {
         </tr>
       </thead>
       <tbody>
-        {users.map((user) => (
-          <tr key={user.id}>
-            <td>{user.id}</td>
+        {users.map((user, index) => (
+          <tr key={`${index}`}>
+            <td>{index}</td>
             <td>{user.email}</td>
             <td>{user.firstName}</td>
             <td>{user.lastName}</td>

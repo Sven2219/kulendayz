@@ -9,11 +9,9 @@ interface Props {
 const Messages = ({ messages }: Props) => {
   return (
     <ul className={styles['message-container']}>
-      {messages.map((el, index) => (
-        <li className={styles['message-item']} key={el.id}>
-          <Text>
-            Message {index}: {el.message}
-          </Text>
+      {messages.map((el) => (
+        <li className={styles['message-item']} key={el.infobipMessageId}>
+          <Text>{el.content}</Text>
         </li>
       ))}
     </ul>

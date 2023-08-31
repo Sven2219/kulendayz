@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 
 import { FormState } from '../utils/formValuesReducer'
 import localStorageKeys from 'src/const/localStorage'
+import { axiosInstance } from 'src/service'
 
 const useRegister = () => {
   const { t } = useTranslation()
@@ -10,8 +11,14 @@ const useRegister = () => {
 
   const register = async (formValuesState: FormState): Promise<void> => {
     try {
+      const { email, password, firstName, lastName } = formValuesState
       setIsLoading(true)
-      await registerMock(formValuesState)
+      await axiosInstance.post('auth/1/register', {
+        email,
+        password,
+        firstName,
+        lastName,
+      })
       localStorage.setItem(localStorageKeys.EMAIL, formValuesState.email)
       setIsLoading(false)
     } catch (e) {
@@ -21,23 +28,6 @@ const useRegister = () => {
   }
 
   return { isLoading, register }
-}
-
-const registerMock = ({
-  email,
-  password,
-  firstName,
-  lastName,
-}: FormState): Promise<string> => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (email && password && firstName && lastName) {
-        resolve('Success')
-      } else {
-        reject('Something went wrong')
-      }
-    }, 2000)
-  })
 }
 
 export default useRegister

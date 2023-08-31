@@ -1,4 +1,7 @@
 export interface Message {
-  id: string
-  message: string
+  content: string
+  email: string
+  infobipMessageId: string
+  sentAt: string
+  subject: string
 }

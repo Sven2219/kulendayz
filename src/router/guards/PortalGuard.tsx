@@ -1,28 +1,29 @@
 import React from 'react'
 import { Navigate, Outlet } from 'react-router-dom'
 import { useAtom } from 'jotai'
-import jwtDecode from 'jwt-decode'
 
 import { RoutesNames } from '../const/routes'
-import localStorageKeys from 'src/const/localStorage'
 import { userAtom } from 'src/atoms/user'
-import { JWTToken } from 'src/types/jwtToken'
+import { axiosInstance } from 'src/service'
+import localStorageKeys from 'src/const/localStorage'
 
 const PortalGuard = () => {
   const [isLoading, setIsLoading] = React.useState(true)
   const [user, setUser] = useAtom(userAtom)
 
-  React.useEffect(() => {
+  const validateAuthToken = async () => {
     try {
-      const token = localStorage.getItem(localStorageKeys.TOKEN)
-      if (token) {
-        const { email, firstName, lastName, id } = jwtDecode<JWTToken>(token)
-        setUser({ email, firstName, lastName, id })
-      }
+      const result = await axiosInstance.get('user/1/me')
+      setUser({ ...result.data })
       setIsLoading(false)
     } catch (error) {
+      localStorage.removeItem(localStorageKeys.TOKEN)
       setIsLoading(false)
     }
+  }
+
+  React.useEffect(() => {
+    validateAuthToken()
   }, [])
 
   if (!isLoading) {
